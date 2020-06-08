@@ -4,7 +4,4 @@ class ClassroomsController < ApplicationController
     
   end
 
-  def index
-    @classrooms = Classroom.all
-  end
 end
