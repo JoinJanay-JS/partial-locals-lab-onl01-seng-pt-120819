@@ -18,10 +18,10 @@ class Student < ActiveRecord::Base
   validates :hometown, presence: true
   validates :birthday, presence: true 
   
-  def self.search(query)
-    if query.present?
-      where('NAME like ?', "%#{query}%")
-    else  
+  def self.search(search_text)
+    if search_text.present?
+      where("name LIKE ?", "%#{search_text}%") 
+    else
       self.all
     end
   end
